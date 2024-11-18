@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.10.10 on win32)" generated="20241115 09:47:39.576" rpa="false" schemaversion="3">
+<suite id="s1" name="MySQL" source="C:\Users\ARTIN\Documents\Sanae\RobotFramework_Browser\MySQL\MySQL.robot">
+<test id="s1-t1" name="Login" line="6">
+<kw name="Connect To Database" library="DatabaseLibrary">
+<arg>pymysql</arg>
+<arg>${DB_Name}</arg>
+<arg>${DB_User}</arg>
+<arg>${DB_Password}</arg>
+<arg>${DB_Host}</arg>
+<arg>${DB_Port}</arg>
+<doc>Creates a database connection using the DB API 2.0 ``db_module`` and the parameters provided.
+Along with listed commonly used arguments (`db_name`, `db_host` etc.)
+you can set any other DB module specific parameters as key/value pairs.</doc>
+<msg timestamp="20241115 09:47:39.618" level="INFO">Looking for configuration file: 'resources\db.cfg'</msg>
+<msg timestamp="20241115 09:47:39.618" level="INFO">Configuration file doesn't exist</msg>
+<msg timestamp="20241115 09:47:39.634" level="INFO">Connect to DB using : pymysql.connect(db='classicmodels', user='root', passwd=***, host='127.0.0.1', port=3306, charset='utf8mb4')</msg>
+<status status="PASS" starttime="20241115 09:47:39.616" endtime="20241115 09:47:39.640"/>
+</kw>
+<kw name="Execute Sql String" library="DatabaseLibrary">
+<arg>INSERT INTO offices (officeCode, city, phone, addressLine1, country, postalCode, territory) VALUES ('9', 'Velke Lovce', '+421987555111', 'Hlavna 1', 'Slovakia', '94001', 'EMEA');</arg>
+<doc>Executes the ``sql_string`` as a single SQL command.</doc>
+<msg timestamp="20241115 09:47:39.640" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;INSERT INTO offices (officeCode, city, phone, addressLine1, country, postalCode, territory) VALUES ('9', 'Velke Lovce', '+421987555111', 'Hlavna 1', 'Slovakia', '94001', 'EMEA');&lt;/code&gt;</msg>
+<msg timestamp="20241115 09:47:39.641" level="FAIL">IntegrityError: (1062, "Duplicate entry '9' for key 'offices.PRIMARY'")</msg>
+<status status="FAIL" starttime="20241115 09:47:39.640" endtime="20241115 09:47:39.645"/>
+</kw>
+<kw name="Disconnect From Database" library="DatabaseLibrary">
+<doc>Disconnects from the database.</doc>
+<status status="NOT RUN" starttime="20241115 09:47:39.645" endtime="20241115 09:47:39.645"/>
+</kw>
+<status status="FAIL" starttime="20241115 09:47:39.615" endtime="20241115 09:47:39.645">IntegrityError: (1062, "Duplicate entry '9' for key 'offices.PRIMARY'")</status>
+</test>
+<status status="FAIL" starttime="20241115 09:47:39.578" endtime="20241115 09:47:39.646"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="MySQL">MySQL</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
