@@ -1,0 +1,15 @@
+rootpwd: 
+MyRoot84.
+user Matus pwd: Kreslo987.
+
+mysql -u root -p
+- to start mysql server from console (root pwd after)
+
+source C:/Users/ARTIN/Documents/Sanae/Robot_MySQL_test/mysqlsampledatabase\mysqlsampledatabase.sql
+- to import database (change path if needed)
+
+show databases;
+USE your_database_name;
+SHOW TABLES;
+SHOW VARIABLES;
+- This will list all MySQL configuration parameters like max_connections, innodb_buffer_pool_size, etc.
